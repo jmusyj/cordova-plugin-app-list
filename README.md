@@ -1,1 +1,1 @@
-# cordova-plugin-app-list
+# Cordova App List Plugin

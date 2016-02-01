@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.uforia.appList"
+      version="0.1.0">
+    <name>uforia-plugin-app-list</name>
+    <description>App List Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap</keywords>
+  
+    <js-module src="www/AppList.js" name="AppList">
+        <clobbers target="window.appListPlugin" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppList">
+                <param name="android-package" value="com.uforia.appList"/>
+            </feature>
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+		</config-file>
+ 
+        <source-file src="src/android/com/uforia/appList/AppList.java" target-dir="src/com/uforia/appList" />      
+     
+	 </platform>          
+</plugin>
