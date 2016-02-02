@@ -25,7 +25,7 @@
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 		</config-file>
  
-        <source-file src="src/android/com/uforia/appList/AppList.java" target-dir="src/com/uforia/appList" />      
+        <source-file src="src/android/com/uforia/appList/AppListPlugin.java" target-dir="src/com/uforia/appList" />      
      
 	 </platform>          
 </plugin>
