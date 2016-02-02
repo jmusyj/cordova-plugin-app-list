@@ -10,7 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
 
-import org.apache.cordova.DroidGap;
+import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -75,7 +75,7 @@ public class AppListPlugin extends CordovaPlugin {
 
     private ArrayList<App> listInstalledApps(Boolean includeSystem, JSONArray ExcludeList) throws JSONException, FileNotFoundException, InterruptedException {
         final ArrayList<App> res = new ArrayList<App>();
-        final PackageManager packageManager = ((DroidGap) this.cordova.getActivity()).getPackageManager();
+        final PackageManager packageManager = ((CordovaActivity) this.cordova.getActivity()).getPackageManager();
         final List appList = packageManager.getInstalledPackages(0);
 
         for (int i = 0; i < appList.size(); i++) {
@@ -96,7 +96,7 @@ public class AppListPlugin extends CordovaPlugin {
                 @Override
                 public void run() {
                     try {
-                        newApp.setIconUrl(newApp.saveAppIcon(p.applicationInfo.loadIcon(((DroidGap) activity).getPackageManager()), newApp.getName()));
+                        newApp.setIconUrl(newApp.saveAppIcon(p.applicationInfo.loadIcon(((CordovaActivity) activity).getPackageManager()), newApp.getName()));
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
@@ -119,7 +119,7 @@ public class AppListPlugin extends CordovaPlugin {
     }
 
     void launchApplication(String packageName) {
-        Intent LaunchIntent = ((DroidGap) this.cordova.getActivity()).getPackageManager().getLaunchIntentForPackage(packageName);
+        Intent LaunchIntent = ((CordovaActivity) this.cordova.getActivity()).getPackageManager().getLaunchIntentForPackage(packageName);
         this.cordova.getActivity().startActivity(LaunchIntent);
 
         PluginResult result = new PluginResult(PluginResult.Status.OK);
