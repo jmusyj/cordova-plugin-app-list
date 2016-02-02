@@ -17,7 +17,7 @@
         
 		<config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppList">
-                <param name="android-package" value="com.uforia.appList"/>
+                <param name="android-package" value="com.uforia.appList.AppList"/>
             </feature>
         </config-file>
 		
