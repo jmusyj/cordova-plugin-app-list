@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="com.uforia.appList"
       version="0.1.0">
-    <name>uforia-plugin-app-list</name>
+    <name>AppListPlugin</name>
     <description>App List Plugin</description>
     <license>MIT</license>
     <keywords>phonegap</keywords>
